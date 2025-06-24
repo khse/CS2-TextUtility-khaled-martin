@@ -1,5 +1,13 @@
 #include "text_utility.h"
 
+
+void swap (char& a, char& b)
+{
+    char temp = a; 
+    a = b; 
+    b = temp; 
+}
+
 int wordCount(char* str)
 {
 	
@@ -41,13 +49,29 @@ void vowelConsonantCount(char* str, int &vowels, int &consonants)
 
 void reverseString(char* str)
 {
-
-
+  int size = 0;
+   while (*str) {str++; size++;} 
+   str-=size; 
+  for (int i = 0; i < size / 2; i++) 
+  {
+      swap(str[i], str[size-i-1]);
+  }
 }
 
 bool isPalindrome(char* str)
 {
 
+    int size=charCount( str );
+    bool palindrome =true;
+    for (int i=0;i<size/2;i++)
+    {
+        if (str[i] !=str[size-i-1])
+        {
+            palindrome= false; 
+            break; 
+        }
+    }
+    return palindrome;
 
 }
 void toUpperCase(char* str)
