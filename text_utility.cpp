@@ -20,10 +20,18 @@ int wordCount(char* str)
 }
 
 int charCount(char* str)
-{
-
-    return; 
+{ 
+   int count =0; 
+   while(*str){
+        if (*str!=' ')
+        {
+         str++; 
+         count++;
+        } else  str++;
+    }   return count; 
 }
+
+
 
 void vowelConsonantCount(char* str, int &vowels, int &consonants)
 {
