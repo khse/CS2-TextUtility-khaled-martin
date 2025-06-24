@@ -2,7 +2,21 @@
 
 int wordCount(char* str)
 {
-    return ;
+	
+    int words = 0;
+    bool wasSpace = true;
+
+    while (*str) {
+        if (*str != ' ' && wasSpace) {
+            words++;
+            wasSpace = false;
+        } else if (*str == ' ') {
+            wasSpace = true;
+        }
+        str++;
+    }
+
+    return words;
 }
 
 int charCount(char* str)
