@@ -43,8 +43,18 @@ int charCount(char* str)
 
 void vowelConsonantCount(char* str, int &vowels, int &consonants)
 {
-
-
+	    while (*str) {
+        if (*str == 'a' || *str == 'e' || *str == 'i' || *str == 'o' || *str == 'u' || *str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U') {
+            vowels++;
+            str++;
+        }
+        else if (*str != ' ') {
+            consonants++;
+            str++;
+        }
+        else
+            str++;
+    }
 }
 
 void reverseString(char* str)
