@@ -42,8 +42,18 @@ int charCount(char* str)
 
 void vowelConsonantCount(char* str, int &vowels, int &consonants)
 {
-
-
+	    while (*str) {
+        if (*str == 'a' || *str == 'e' || *str == 'i' || *str == 'o' || *str == 'u' || *str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U') {
+            vowels++;
+            str++;
+        }
+        else if (*str != ' ') {
+            consonants++;
+            str++;
+        }
+        else
+            str++;
+    }
 }
 
 void reverseString(char* str)
@@ -104,6 +114,33 @@ void toLowerCase(char* str)
 
 int counterSubstringOccurrence(char* str, char* substr)
 {
+        int count = 0;
+    int substrLen = 0;
+    int strLen = 0;
+    char* temp = substr;
 
-    return ; 
+    while (*temp) {
+        substrLen++;
+        temp++;
+    }
+    temp=str;
+    while (*temp) {
+        strLen++;
+        temp++;
+    }
+    char* temp2 = substr;
+    temp=str;
+
+    for (int i = 0; i<strLen-substrLen+1; i++) {
+        bool same = true;
+        for (int j = 0; j < substrLen; j++) {
+            if (temp[i+j]!=temp2[j]) {
+                same = false;
+                break;
+            }
+        }
+        if (same) count++;
+    }
+
+    return count;
 }
