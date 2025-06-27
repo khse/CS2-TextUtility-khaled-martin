@@ -17,6 +17,7 @@ int main(){
 	char encrypted[100] = {0};
 	char decrypted[100] = {0};
 
+    cout <<str<<endl;
 	cout << "word Count: " << wordCount(str) << endl;
 	cout << "Characters Count: " << charCount(str) << endl;
 

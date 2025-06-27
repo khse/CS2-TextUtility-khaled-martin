@@ -1,4 +1,4 @@
-#include "text_utility.h"More actions
+#include "text_utility.h"
 
 
 void swap(char& a, char& b)
@@ -43,7 +43,7 @@ int charCount(char* str)
 
 
 
-void vowelConsonantCount(char* str, int& vowels, int& consonants)
+void vowelConsonantCount(char* str, int &vowels, int &consonants)
 {
     while (*str) {
         if (*str == 'a' || *str == 'e' || *str == 'i' || *str == 'o' || *str == 'u' || *str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U') {
@@ -92,9 +92,9 @@ void toUpperCase(char* str)
    {
      if (*str>='a' && *str <= 'z')
      {
-        *str -= 32;
-         str++;
-        }
+        *str -= 32;}
+     str++;
+        
      
     }
 
@@ -161,7 +161,7 @@ void decryptStr(char* decryptedstr, char* key, char* encryptedStr) {
 
     for (int i = 0; i < encryptedStrlen; i++) {
         if (encryptedStr[i] >= 'a' && encryptedStr[i] <= 'z') {
-            decryptedstr[i] = ((encryptedStr[i] - 'a') - (key[i % keylen] - 'a')) % 26 + 'a';//-a to change from int to char
+            decryptedstr[i] = ((encryptedStr[i] - 'a') - (key[i % keylen] - 'a')+26 ) % 26 + 'a';
         } else {
             decryptedstr[i] = encryptedStr[i];
         }

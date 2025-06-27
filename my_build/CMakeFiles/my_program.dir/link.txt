@@ -1,0 +1,1 @@
+/ucrt64/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/my_program.dir/main.cpp.o CMakeFiles/my_program.dir/text_utility.cpp.o -o my_program.exe -Wl,--out-implib,libmy_program.dll.a -Wl,--major-image-version,0,--minor-image-version,0
