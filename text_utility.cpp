@@ -7,7 +7,6 @@ void swap (char& a, char& b)
     a = b; 
     b = temp; 
 }
-
 int wordCount(char* str)
 {
 	
@@ -86,16 +85,62 @@ bool isPalindrome(char* str)
 }
 void toUpperCase(char* str)
 {
-
+    while(*str)
+   {
+     if (int(*str)<96 || *str == ' ')
+     {
+         str++;
+        }
+       else {*str -= 32;
+     str++;}
+    }
 
 }
 void toLowerCase(char* str)
 {
-
+  while (*str)
+   {
+    if(int(*str)>=65 && int(*str)<=90)
+    {
+        *str += 32;
+        str++;
+    } else if (*str == ' ') {
+        str++;
+    } else {
+        str++;
+    }
+   }
 }
 
 int counterSubstringOccurrence(char* str, char* substr)
 {
+        int count = 0;
+    int substrLen = 0;
+    int strLen = 0;
+    char* temp = substr;
 
-    return ; 
+    while (*temp) {
+        substrLen++;
+        temp++;
+    }
+    temp=str;
+    while (*temp) {
+        strLen++;
+        temp++;
+    }
+    char* temp2 = substr;
+    temp=str;
+
+    for (int i = 0; i<strLen-substrLen+1; i++) {
+        bool same = true;
+        for (int j = 0; j < substrLen; j++) {
+            if (temp[i+j]!=temp2[j]) {
+                same = false;
+                break;
+            }
+        }
+        if (same) count++;
+    }
+
+    return count;
 }
