@@ -1,8 +1,7 @@
-int wordCount(char* str);
-int charCount(char* str);
-void vowelConsonantCount(char* str, int &vowels, int &consonants);
-void reverseString(char* str);
-bool isPalindrome(char* str);
+bool isPalindrome(char* str); Add commentMore actions
 void toUpperCase(char* str);
 void toLowerCase(char* str);
 int counterSubstringOccurrence(char* str, char* substr);
+int counterSubstringOccurrence(char* str, char* substr);
+void encryptStr(char* plaintext, char* key, char* encryptedStr);
+void decryptStr(char* plaintext, char* key, char* encryptedStr);
