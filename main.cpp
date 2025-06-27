@@ -1,32 +1,31 @@
-#include "text_utility.h"Add commentMore actions
+#include "text_utility.h"
 #include <iostream> 
+using namespace std; 
 
-using namespace std;
-
-int main() {
-	cout << "Hi" << endl;
-	return 0;
+int main(){
 	char str[] = "Hello world test";
-	char reverse[] = "this is the reverce test";
+	char reverse[] = "this is the reverse test";
 	char palindrome1[] = "radar";
 	char palindrome2[] = "qatar";
 	char uplowCase[] = "HeLlO woRLD THiS is a TESt";
+	char upperTest[] = "HeLlO woRLD THiS is a TESt";
+	char lowerTest[] = "HeLlO woRLD THiS is a TESt";
 	char mainstr[] = "abababab";
 	char substr[] = "ab";
 	char plainText[] = "attackatdawn";
 	char key[] = "lemon";
-	char encrypted[];
-	char decrypted[];
+	char encrypted[100] = {0};
+	char decrypted[100] = {0};
 
 	cout << "word Count: " << wordCount(str) << endl;
 	cout << "Characters Count: " << charCount(str) << endl;
 
 	int vowels = 0, consonants = 0;
-	vowelConsonantCout(str, vowels, consonants);
+	vowelConsonantCount(str, vowels, consonants);
 
-	cout << "String before reverce: " << reverce;
-	reverseString(str);
-	cout << "reverced string: " << reverce;
+	cout << "String before reverse: " << reverse<<endl;
+	reverseString(reverse);
+	cout << "reversed string: " << reverse<<endl;
 
 	if (isPalindrome(palindrome1))
 		cout << palindrome1 << " Is a palindrome" << endl;
@@ -54,4 +53,5 @@ int main() {
 
 	decryptStr(decrypted, key, encrypted);
 	cout << "Decrypted: " << decrypted << endl;
+	return 0; 
 }

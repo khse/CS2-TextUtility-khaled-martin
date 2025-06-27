@@ -88,16 +88,14 @@ bool isPalindrome(char* str)
 }
 void toUpperCase(char* str)
 {
-    while (*str)
-    {
-        if (int(*str) < 96 || *str == ' ')
-        {
-            str++;
+    while(*str)
+   {
+     if (*str>='a' && *str <= 'z')
+     {
+        *str -= 32;
+         str++;
         }
-        else {
-            *str -= 32;
-            str++;
-        }
+     
     }
 
 }
@@ -156,7 +154,7 @@ int counterSubstringOccurrence(char* str, char* substr)
 void decryptStr(char* decryptedstr, char* key, char* encryptedStr) {
     int encryptedStrlen = 0, keylen = 0;
 
-    while (decryptedstr[encryptedStrlen] != '\0')
+    while (encryptedStr[encryptedStrlen] != '\0')
         encryptedStrlen++;
     while (key[keylen] != '\0')
         keylen++;
@@ -164,8 +162,7 @@ void decryptStr(char* decryptedstr, char* key, char* encryptedStr) {
     for (int i = 0; i < encryptedStrlen; i++) {
         if (encryptedStr[i] >= 'a' && encryptedStr[i] <= 'z') {
             decryptedstr[i] = ((encryptedStr[i] - 'a') - (key[i % keylen] - 'a')) % 26 + 'a';//-a to change from int to char
-        }
-        else {
+        } else {
             decryptedstr[i] = encryptedStr[i];
         }
     }
@@ -183,9 +180,9 @@ void encryptStr(char* plaintext, char* key, char* encryptedStr) {
     for (int i = 0; i < plaintextlen; i++) {
         if (plaintext[i] >= 'a' && plaintext[i] <= 'z') {
             encryptedStr[i] = ((plaintext[i] - 'a') + (key[i % keylen] - 'a')) % 26 + 'a';//-a to change from int to char
-        }
-        else {
+        } else {
             encryptedStr[i] = plaintext[i];
         }
     }
     encryptedStr[plaintextlen] = '\0';
+}
